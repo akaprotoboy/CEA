@@ -15,14 +15,6 @@ public abstract class Calificar {
     static List<Rango> rangos = MySQLDatabaseHandler.getListaRango();
     static List<Rango> rangosAux = new ArrayList<>();
 
-    static {
-        modificarRango();
-        for (int k = 0; k < 12; k++) {
-            respuestas.addAll(respuestas);
-        }
-        System.out.println("Finished");
-    }
-
     public static void modificarRango() {
         rangosAux.clear(); // Clear rangosAux before starting
         for (Rango rango : rangos) {
@@ -100,7 +92,10 @@ public abstract class Calificar {
     private static class CalificarTask extends RecursiveTask<List<Double>> {
         private final int start;
         private final int end;
-        private static final int THRESHOLD = (respuestas.size()/Runtime.getRuntime().availableProcessors())+1; // Threshold for splitting tasks
+        private static final int THRESHOLD = (respuestas.size() / Runtime.getRuntime().availableProcessors()) + 1; // Threshold
+                                                                                                                   // for
+                                                                                                                   // splitting
+                                                                                                                   // tasks
 
         CalificarTask(int start, int end) {
             this.start = start;
