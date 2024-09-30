@@ -17,9 +17,13 @@
 - Unused local variables should be removed java:S1481
   Hay 2 variables que no se utizan. Estan se utilian para medir el tiempo de ejeccucion, pero no son necesarias.
   > List<Double> puntajesCS = CalificarSecuencial(); -> CalificarSecuencial();
+
+
   > List<Double> puntajesCC = CalificarConcurrente(); -> CalificarConcurrente();
 - Standard outputs should not be used directly to log anything java:S106
   Hay varias instancias de System.out.println() que se utilizan para ver el funcionamiento del codigo. Se deberian pasar a logger.info()
   > System.out.println("Secuencial: " + elapsedTimeCS + " ms"); -> logger.info("Secuencial: " + elapsedTimeCS + " ms");
+  
   > System.out.println("Concurente: " + elapsedTimeCC + " ms"); -> logger.info("Concurente: " + elapsedTimeCC + " ms");
+  
   > System.out.println(iguales); -> logger.info(iguales);
