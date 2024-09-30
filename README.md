@@ -13,7 +13,7 @@
   > public static void Comprobar() {} -> public static void comprobar() {}
 - Unused local variables should be removed java:S1481
 
-  Hay 2 variables que no se utizan. Estan se utilian para medir el tiempo de ejeccucion, pero no son necesarias.
+  Hay 2 variables que no se utizan.
   > List<Double> puntajesCS = CalificarSecuencial(); -> CalificarSecuencial();
 
 
